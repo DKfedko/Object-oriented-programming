@@ -1,8 +1,16 @@
 public class Freight {
 
-    public double grossWeight;
-    public int palletsCount;
-    public double freightLength;
+    private double grossWeight;
+    private int palletsCount;
+    private double freightLength;
+
+public void printFreightInfo(){
+    System.out.println("Shipment info " + ("\n") +
+            "weight: " + grossWeight+
+            " pallets: " + + palletsCount +
+            " length: " + freightLength);
+
+}
 
     public double getGrossWeight(){
         return grossWeight;
@@ -12,5 +20,14 @@ public class Freight {
     }
     public double getFreightLength(){
         return freightLength;
+    }
+    public void setGrossWeight(double grossWeight) {
+        this.grossWeight = grossWeight;
+    }
+    public void setPalletsCount(int palletsCount) {
+        this.palletsCount = palletsCount;
+    }
+    public void setFreightLength(double freightLength) {
+        this.freightLength = freightLength;
     }
 }
