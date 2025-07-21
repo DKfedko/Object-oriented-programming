@@ -2,21 +2,18 @@ public class Truck {
 
     private String truckUnit;
     private final double truckSize;
-    private final int payLoadLbs;
+    private final double payLoadLbs;
     private int palletsFit;
 
-    public Truck (String truckUnit, double truckSize, int payLoadLbs, int palletsFit ){
+    public Truck(String truckUnit, double truckSize, int payLoadLbs, int palletsFit) {
         this.truckUnit = truckUnit;
         this.payLoadLbs = payLoadLbs;
         this.truckSize = truckSize;
         this.palletsFit = palletsFit;
     }
 
-    public void displayTruckInfo() {
-        System.out.println("Truck: " + truckUnit + ("\n") +
-                "truck size Ft': " + truckSize + ("\n") +
-                "truck payload LBS: " + payLoadLbs + ("\n") +
-                "can fit up to " +palletsFit + " pallets");
+    public boolean isTruckCanGoWithWeight(Freight  freight) {
+        return freight.getGrossWeight() <= this.payLoadLbs;
     }
     public String getTruckUnit() {
         return truckUnit;
@@ -24,7 +21,7 @@ public class Truck {
     public double getTruckSize() {
         return truckSize;
     }
-    public int getPayLoadLbs() {
+    public double getPayLoadLbs() {
         return payLoadLbs;
     }
     public int getPalletsFit() {

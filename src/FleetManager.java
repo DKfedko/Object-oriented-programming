@@ -2,37 +2,35 @@ public class FleetManager {
 
     public static void main(String[] args) {
 
-        Truck [] trucks  = {
-                new Truck("b055", 22.5,8500, 12),
-                new Truck("b055", 22.5,8500, 12)
+        Truck[] trucks = {
+                new Truck("b055", 22.5, 8500, 12),
+                new Truck("b066", 22.5, 8500, 12),
+                new Truck("b101", 18.5, 7800, 8),
+                new Truck("b102", 20.5, 8400, 10),
         };
 
-        Truck b103 = new Truck("b101",18.5, 7800, 8);
-        Truck b104 = new Truck("b102",20.5, 8400, 10);
+        Freight[] freights = {
+                new Freight("m00001", 8150, 14, 18),
+                new Freight("m00002", 6550, 6, 13),
+                new Freight("m00003", 7865, 8, 12),
+                new Freight("m00004", 6400, 14, 22),
+        };
 
-        System.out.println(b103);
+        for (Truck straightTrucks : trucks)
+            System.out.println(straightTrucks);
 
-        b104.displayTruckInfo ();
-            System.out.println("\n  ");
+        for (Freight loads : freights)
+            System.out.println(loads);
 
+        for (Truck truck : trucks) {
+            for (Freight freight : freights) {
+                if (truck.isTruckCanGoWithWeight(freight)) {
+                    System.out.println("Freight " + freight.getLoadNumber() + " Good to go with the truck " + truck.getTruckUnit());
+                } else {
+                    System.out.println("Freight " + freight.getLoadNumber() + " NO GO, overweight " + truck.getTruckUnit());
 
-        Freight m00001 = new Freight();
-        m00001.setFreightLength(14.5);
-        m00001.setGrossWeight(6400);
-        m00001.setPalletsCount(8);
-
-        Freight m00002 = new Freight();
-        m00002.setFreightLength(18);
-        m00002.setGrossWeight(4500);
-        m00002.setPalletsCount(5);
-
-        Freight m00003 = new Freight();
-        m00003.setFreightLength(12);
-        m00003.setGrossWeight(6841);
-        m00003.setPalletsCount(6);
-
-        m00001.printFreightInfo();
-        m00002.printFreightInfo();
-        m00003.printFreightInfo();
+                }
+            }
+        }
     }
 }
