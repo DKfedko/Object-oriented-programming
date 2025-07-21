@@ -12,9 +12,10 @@ public class Truck {
         this.palletsFit = palletsFit;
     }
 
-    public boolean isTruckCanGoWithWeight(Freight  freight) {
-        return freight.getGrossWeight() <= this.payLoadLbs;
+    public boolean isTruckCanGo(Freight  freight) {
+        return freight.getGrossWeight() <= this.palletsFit;
     }
+
     public String getTruckUnit() {
         return truckUnit;
     }
