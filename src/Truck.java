@@ -12,9 +12,11 @@ public class Truck {
         this.palletsFit = palletsFit;
     }
 
-    public boolean isTruckCanGo(Freight  freight) {
+    public boolean ifTruckCanGo(Freight  freight) {
         return freight.getGrossWeight() <= this.palletsFit;
     }
+
+    //public int
 
     public String getTruckUnit() {
         return truckUnit;

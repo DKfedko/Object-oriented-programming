@@ -24,7 +24,7 @@ public class FleetManager {
 
         for (Truck truck : trucks) {
             for (Freight freight : freights) {
-                if (truck.isTruckCanGo(freight)) {
+                if (truck.ifTruckCanGo(freight)) {
                     System.out.println("Freight " + freight.getLoadNumber() + " Good to go with the truck " + truck.getTruckUnit());
                 } else {
                     System.out.println("Freight " + freight.getLoadNumber() + " NO GO, overweight " + truck.getTruckUnit());
@@ -32,12 +32,12 @@ public class FleetManager {
                 }
             }
         }
-        for (Truck truck : trucks){
-            for(Freight freight:freights){
-                if (truck.isTruckCanGo(freight)){
-                    System.out.println("Freight " + freight.getLoadNumber() + " fits to truck " + truck.getTruckUnit());
-                }else{
-                    System.out.println("Freight " + freight.getLoadNumber() + " won't fir to the truck " + truck.getTruckUnit());
+        for (Truck truck : trucks) {
+            for (Freight load : freights) {
+                if (truck.ifTruckCanGo(load)) {
+                    System.out.println("Freight " + load.getLoadNumber() + " fits to truck " + truck.getTruckUnit());
+                } else {
+                    System.out.println("Freight " + load.getLoadNumber() + " won't fir to the truck " + truck.getTruckUnit());
                 }
             }
         }
